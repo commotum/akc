@@ -6,3 +6,4 @@ b5e164a	0.049328	0.062717	keep	cycle axes, unit=1, boost=0
 89df608	0.004696	0.005388	keep	dual_plane mode with cycle axes and paired frequencies
 4e04a0e	0.002991	0.004247	keep	dual_plane with boost_scale 1.1
 f0c388d	0.002909	0.004166	keep	fine-tune dual_plane: boost 1.12, rotation 0.98
+39c0034	0.000000	0.000000	keep	dual_plane axis_grouped with unit frequencies and equal plane scales
