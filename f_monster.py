@@ -32,7 +32,7 @@ class MonsterConfig:
     rotation_scale: float = 1.0
 
     # Axis distribution
-    axis_mode: str = "fibonacci"   # fibonacci | cycle | hybrid
+    axis_mode: str = "fibonacci"   # fibonacci | cycle | hybrid | x_only | xy_circle
     axis_blend: float = 1.0        # for hybrid: 1 => fibonacci, 0 => cycle
 
     # Block transform family
@@ -89,7 +89,16 @@ def build_axes(num_freq: int, config: MonsterConfig) -> np.ndarray:
     fib = fibonacci_sphere(num_freq)
     cyc = cycle_axes(num_freq)
 
-    if mode == "fibonacci":
+    if mode in {"x_only", "x"}:
+        axes = np.zeros((num_freq, 3), dtype=np.float64)
+        axes[:, 0] = 1.0
+    elif mode in {"xy_circle", "xy"}:
+        i = np.arange(num_freq, dtype=np.float64)
+        theta = (2.0 * math.pi) * (i + 0.5) / max(1, num_freq)
+        axes = np.zeros((num_freq, 3), dtype=np.float64)
+        axes[:, 0] = np.cos(theta)
+        axes[:, 1] = np.sin(theta)
+    elif mode == "fibonacci":
         axes = fib
     elif mode in {"cycle", "cycle_xyz"}:
         axes = cyc

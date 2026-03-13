@@ -1,0 +1,2 @@
+commit	benchmark_version	pair	track	active_coords	F	D_rope	D_monster	E_rel	E_rope	spectrum	tail	anisotropy	E_eta	N_boost	cone_sep	nonseparability	collapse_fail	status	description
+63f8965	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.006086	0.032033	0.067092	0.000783	NA	NA	NA	0.000710	false	keep	phase1 primary calibration: C matched-F
