@@ -37,6 +37,7 @@ class MonsterConfig:
 
     # Block transform family
     block_mode: str = "lorentz"    # lorentz | dual_plane
+    dual_freq_mode: str = "interleaved"  # interleaved | axis_grouped
 
 
 DEFAULT_CONFIG = MonsterConfig()
@@ -202,14 +203,38 @@ def _build_dual_plane_block_transforms(
     spatial = bank.monster_positions[:, 1:4]             # (L, 3)
     proj = spatial @ axes.T                              # (L, F)
 
-    inv_freq = prepare.warped_frequencies(
-        2 * num_freq,
-        theta_base=float(config.theta_base),
-        exponent=float(config.freq_exponent),
-        scale=float(config.freq_scale),
-    )
-    inv_phi = inv_freq[0::2]
-    inv_theta = inv_freq[1::2]
+    dual_freq_mode = config.dual_freq_mode.lower()
+    if dual_freq_mode == "interleaved":
+        inv_freq = prepare.warped_frequencies(
+            2 * num_freq,
+            theta_base=float(config.theta_base),
+            exponent=float(config.freq_exponent),
+            scale=float(config.freq_scale),
+        )
+        inv_phi = inv_freq[0::2]
+        inv_theta = inv_freq[1::2]
+    elif dual_freq_mode in {"axis_grouped", "grouped"}:
+        axis_count = prepare.AXIAL_COORD_DIMS
+        if num_freq % axis_count != 0:
+            raise ValueError(
+                f"dual axis_grouped packing requires num_freq divisible by {axis_count}; got {num_freq}"
+            )
+        if config.axis_mode.lower() not in {"cycle", "cycle_xyz"}:
+            raise ValueError("dual axis_grouped packing requires axis_mode='cycle'")
+
+        blocks_per_axis = num_freq // axis_count
+        freq_per_axis = 2 * blocks_per_axis
+        axis_inv = prepare.warped_frequencies(
+            freq_per_axis,
+            theta_base=float(config.theta_base),
+            exponent=float(config.freq_exponent),
+            scale=float(config.freq_scale),
+        )
+        block_rank = np.arange(num_freq, dtype=np.int64) // axis_count
+        inv_phi = axis_inv[2 * block_rank]
+        inv_theta = axis_inv[2 * block_rank + 1]
+    else:
+        raise ValueError(f"unknown dual_freq_mode: {config.dual_freq_mode}")
 
     phi = proj * (unit * float(config.boost_scale)) * inv_phi[None, :]
     theta = proj * (unit * float(config.rotation_scale)) * inv_theta[None, :]
