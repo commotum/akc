@@ -29,19 +29,19 @@ DIM = prepare.DEFAULT_DIM
 REFERENCE_THETA_BASE = prepare.REFERENCE_THETA_BASE
 WINDOWS = prepare.TARGET_WINDOWS
 
-CANDIDATE_NAME = "baseline"
+CANDIDATE_NAME = "cycle_no_boost_unit1"
 
 # Edit these directly during autoresearch.
 CANDIDATE = f_monster.MonsterConfig(
     span=2.0 * 3.141592653589793,
     top_delta=2048.0,
-    unit=None,
+    unit=1.0,
     theta_base=10_000.0,
     freq_scale=1.0,
     freq_exponent=1.0,
-    boost_scale=1.0,
+    boost_scale=0.0,
     rotation_scale=1.0,
-    axis_mode="fibonacci",
+    axis_mode="cycle",
     axis_blend=1.0,
 )
 
