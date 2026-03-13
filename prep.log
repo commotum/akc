@@ -1,8 +1,0 @@
-Cache path: /home/jake/Developer/akc/.cache/rope_reference_dim384_theta10000_windows64-512-1024-2048.npz
-
-window=  64 | axial_shape=(4, 4, 4) | curve_len=64 | k(0)=1.000000 | ecr=42.0
-window= 512 | axial_shape=(8, 8, 8) | curve_len=512 | k(0)=1.000000 | ecr=92.0
-window=1024 | axial_shape=(8, 8, 16) | curve_len=1024 | k(0)=1.000000 | ecr=185.0
-window=2048 | axial_shape=(8, 16, 16) | curve_len=2048 | k(0)=1.000000 | ecr=390.0
-
-Done.
