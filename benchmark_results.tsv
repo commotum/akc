@@ -194,3 +194,21 @@ ef96e4b	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002122	0.004964	0.060488	0
 ef96e4b	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002119	0.004650	0.061484	0.047438	0.000098	0.000000	0.356699	0.027044	0.002392	false	discard	multiseed-phase3: G matched-F F96 exp=3.0 bs=0.0005 seed=1
 ef96e4b	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002128	0.002775	0.060808	0.044957	0.000105	0.000000	0.356699	0.026491	0.002351	false	keep	multiseed-phase3: G matched-F F96 exp=3.0 bs=0.0005 seed=2
 685180f	monster-v2.0	D	matched-F	t,x	96	384	384	0.001760	0.004069	0.028235	0.234813	0.000002	0.000000	0.324664	NA	0.020180	false	keep	probe: D dense sampling for cone_sep
+d9f41db	monster-v2.1	D	matched-F	t,x	96	384	384	0.001727	0.003951	0.029677	0.236364	0.000023	0.000000	0.324664	0.214584	0.020195	false	discard	v2.1-check: D cone fallback
+d9f41db	monster-v2.1	E	matched-F	t,x,y	96	576	384	0.002867	0.006691	0.035436	0.127902	0.000146	0.000000	0.403705	0.062936	0.007265	false	discard	v2.1-check: E tuned
+d9f41db	monster-v2.1	G	matched-F	t,x,y,z	96	768	384	0.002122	0.004964	0.060488	0.043258	0.000104	0.000000	0.356699	0.028114	0.002409	false	discard	v2.1-check: G tuned
+d9f41db	monster-v2.1	D	matched-F	t,x	96	384	384	0.001727	0.003951	0.029677	0.236364	0.000023	0.000000	0.324664	0.214584	0.020195	false	keep	v2.1-baseline: D tuned with cone fallback
+d9f41db	monster-v2.1	A	matched-F	t	96	192	384	0.000059	0.000136	0.016808	0.661826	0.000000	0.000000	0.084151	NA	0.000000	false	keep	v2.1-baseline: A matched-F F96 exp=1.0 bs=0.0005
+d9f41db	monster-v2.1	B	matched-F	x	96	192	384	0.000000	0.000434	0.006292	0.056874	0.000000	NA	NA	NA	0.000000	false	keep	v2.1-baseline: B matched-F F96 exp=1.5 bs=1.0
+d9f41db	monster-v2.1	C	matched-F	x,y	96	384	384	0.000000	0.002816	0.023329	0.013228	0.001605	NA	NA	NA	0.001585	false	keep	v2.1-baseline: C matched-F F96 exp=1.625 bs=1.0
+d9f41db	monster-v2.1	D	matched-F	t,x	96	384	384	0.001727	0.003951	0.029677	0.236364	0.000023	0.000000	0.324664	0.214584	0.020195	false	discard	v2.1-baseline: D matched-F F96 exp=2.7 bs=0.0005
+d9f41db	monster-v2.1	E	matched-F	t,x,y	96	576	384	0.002867	0.006691	0.035436	0.127902	0.000146	0.000000	0.403705	0.062936	0.007265	false	keep	v2.1-baseline: E matched-F F96 exp=3.5 bs=0.0005
+d9f41db	monster-v2.1	F	matched-F	x,y,z	96	576	384	0.000000	0.001730	0.018638	0.023765	0.000409	NA	NA	NA	0.000526	false	keep	v2.1-baseline: F matched-F F96 exp=1.7125 bs=1.0
+d9f41db	monster-v2.1	G	matched-F	t,x,y,z	96	768	384	0.002122	0.004964	0.060488	0.043258	0.000104	0.000000	0.356699	0.028114	0.002409	false	keep	v2.1-baseline: G matched-F F96 exp=3.0 bs=0.0005
+d9f41db	monster-v2.1	A	equal-D	t	96	384	384	0.000059	0.000136	0.015620	0.672226	0.000000	0.000000	0.084151	NA	0.000000	false	keep	v2.1-equalD: A D384 exp=1.0 bs=0.0005
+d9f41db	monster-v2.1	B	equal-D	x	96	384	384	0.000000	0.000452	0.005093	0.058178	0.000000	NA	NA	NA	0.000000	false	keep	v2.1-equalD: B D384 exp=1.5 bs=1.0
+d9f41db	monster-v2.1	C	equal-D	x,y	96	384	384	0.000000	0.002816	0.023329	0.013228	0.001605	NA	NA	NA	0.001585	false	keep	v2.1-equalD: C D384 exp=1.625 bs=1.0
+d9f41db	monster-v2.1	D	equal-D	t,x	96	384	384	0.001727	0.003951	0.029677	0.236364	0.000023	0.000000	0.324664	0.214584	0.020195	false	keep	v2.1-equalD: D D384 exp=2.7 bs=0.0005
+d9f41db	monster-v2.1	E	equal-D	t,x,y	96	384	384	0.002867	0.006691	0.034917	0.121242	0.000146	0.000000	0.403705	0.062936	0.007265	false	keep	v2.1-equalD: E D384 exp=3.5 bs=0.0005
+d9f41db	monster-v2.1	F	equal-D	x,y,z	96	384	384	0.000000	0.001714	0.018490	0.022685	0.000409	NA	NA	NA	0.000526	false	keep	v2.1-equalD: F D384 exp=1.7125 bs=1.0
+d9f41db	monster-v2.1	G	equal-D	t,x,y,z	96	384	384	0.002122	0.004964	0.059829	0.042811	0.000104	0.000000	0.356699	0.028114	0.002409	false	keep	v2.1-equalD: G D384 exp=3.0 bs=0.0005

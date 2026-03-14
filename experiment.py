@@ -135,9 +135,12 @@ def choose_status_auto(row: dict[str, object], *, tsv_path: Path) -> str:
             parts = line.rstrip("\n").split("\t")
             if len(parts) < 20:
                 continue
+            benchmark_version = parts[1]
             pair = parts[2]
             track = parts[3]
             status = parts[18]
+            if benchmark_version != row["benchmark_version"]:
+                continue
             if pair != row["pair"] or track != row["track"]:
                 continue
             if status not in {"keep", "ablation"}:

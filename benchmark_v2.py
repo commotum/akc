@@ -20,7 +20,7 @@ import numpy as np
 import f_monster
 import prepare
 
-BENCHMARK_VERSION = "monster-v2.0"
+BENCHMARK_VERSION = "monster-v2.1"
 COORD_INDEX = {"t": 0, "x": 1, "y": 2, "z": 3}
 DEFAULT_WINDOWS = (64, 512, 1024, 2048)
 DEFAULT_PAIR = "C"
@@ -372,6 +372,85 @@ def _cone_separation(
     return float(abs(mu_t - mu_s))
 
 
+def _synthetic_cone_separation(
+    *,
+    spec: PairingSpec,
+    d_monster: int,
+    monster_cfg: f_monster.MonsterConfig,
+    rng_seed: int,
+) -> float:
+    """
+    Fallback cone probe for time-active pairings when sampled displacement keys
+    contain only one causal class (common for t,x under flattened indexing).
+    """
+    active = spec.monster_coords
+    if "t" not in active or len(active) <= 1:
+        return float("nan")
+
+    k = len(active)
+    t_idx = active.index("t")
+    spatial_idx = [i for i in range(k) if i != t_idx]
+    if not spatial_idx:
+        return float("nan")
+
+    radius = 4
+    grid = np.arange(-radius, radius + 1, dtype=np.int64)
+    mesh = np.stack(np.meshgrid(*([grid] * k), indexing="ij"), axis=-1).reshape(-1, k)
+    nonzero = np.any(mesh != 0, axis=1)
+    deltas = mesh[nonzero]
+    dt = deltas[:, t_idx].astype(np.float64)
+    spatial = deltas[:, spatial_idx].astype(np.float64)
+    interval = -dt * dt + np.sum(spatial * spatial, axis=1)  # (-,+,+,+)
+    timelike = deltas[interval < 0.0]
+    spacelike = deltas[interval > 0.0]
+    if timelike.size == 0 or spacelike.size == 0:
+        return float("nan")
+
+    rng = np.random.default_rng(int(rng_seed) + 37_091)
+    n_base = 128
+    base = rng.integers(-8, 9, size=(n_base, k), endpoint=False, dtype=np.int64).astype(np.float64)
+
+    def class_mean(class_deltas: np.ndarray) -> float:
+        max_deltas = 32
+        if class_deltas.shape[0] > max_deltas:
+            pick = rng.choice(class_deltas.shape[0], size=max_deltas, replace=False)
+            class_deltas = class_deltas[pick]
+        m = class_deltas.shape[0]
+        if m == 0:
+            return float("nan")
+
+        p = np.repeat(base[None, :, :], m, axis=0)                  # (m, n_base, k)
+        q = p + class_deltas[:, None, :].astype(np.float64)         # (m, n_base, k)
+        p_flat = p.reshape(-1, k)
+        q_flat = q.reshape(-1, k)
+        n = p_flat.shape[0]
+
+        coords = np.zeros((2 * n, 4), dtype=np.float64)
+        for i, c in enumerate(active):
+            idx = COORD_INDEX[c]
+            coords[:n, idx] = p_flat[:, i]
+            coords[n:, idx] = q_flat[:, i]
+
+        bank = make_monster_bank(coords)
+        transforms = f_monster.build_block_transforms(
+            bank=bank,
+            dim=d_monster,
+            config=monster_cfg,
+        )
+        p_idx = np.arange(n, dtype=np.int64)
+        q_idx = p_idx + n
+        sims = _pair_similarity(transforms, p_idx, q_idx)
+        if not np.all(np.isfinite(sims)):
+            return float("nan")
+        return float(np.mean(sims))
+
+    mu_t = class_mean(timelike)
+    mu_s = class_mean(spacelike)
+    if not np.isfinite(mu_t) or not np.isfinite(mu_s):
+        return float("nan")
+    return float(abs(mu_t - mu_s))
+
+
 def _minkowski_metrics(monster_transforms: np.ndarray) -> tuple[float, float]:
     eta = np.diag([-1.0, 1.0, 1.0, 1.0]).astype(np.float64)
     ident = np.eye(4, dtype=np.float64)
@@ -510,6 +589,13 @@ def evaluate_pairing(
     e_eta = float(np.mean(e_eta_vals)) if e_eta_vals else float("nan")
     n_boost = float(np.mean(n_boost_vals)) if n_boost_vals else float("nan")
     cone_sep = float(np.mean(cone_vals)) if cone_vals else float("nan")
+    if spec.time_active and not np.isfinite(cone_sep):
+        cone_sep = _synthetic_cone_separation(
+            spec=spec,
+            d_monster=d_monster,
+            monster_cfg=monster_cfg,
+            rng_seed=rng_seed,
+        )
     nonsep = float(np.mean(nonsep_vals)) if nonsep_vals else float("nan")
 
     core_metrics = (
