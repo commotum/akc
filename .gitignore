@@ -11,5 +11,9 @@ wheels/
 
 # Experiment outputs
 .cache/
-run_artifacts/
+run_artifacts/*
+!run_artifacts/visualize.py
+!run_artifacts/visualize.ipynb
+!run_artifacts/compare.ipynb
+!run_artifacts/monster_hyperparam_grid.py
 *.log
