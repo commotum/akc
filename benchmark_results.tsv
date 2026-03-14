@@ -193,3 +193,4 @@ ef96e4b	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.002874	0.003735	0.035976	0.1
 ef96e4b	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002122	0.004964	0.060488	0.043258	0.000104	0.000000	0.356699	0.028114	0.002409	false	discard	multiseed-phase3: G matched-F F96 exp=3.0 bs=0.0005 seed=0
 ef96e4b	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002119	0.004650	0.061484	0.047438	0.000098	0.000000	0.356699	0.027044	0.002392	false	discard	multiseed-phase3: G matched-F F96 exp=3.0 bs=0.0005 seed=1
 ef96e4b	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002128	0.002775	0.060808	0.044957	0.000105	0.000000	0.356699	0.026491	0.002351	false	keep	multiseed-phase3: G matched-F F96 exp=3.0 bs=0.0005 seed=2
+685180f	monster-v2.0	D	matched-F	t,x	96	384	384	0.001760	0.004069	0.028235	0.234813	0.000002	0.000000	0.324664	NA	0.020180	false	keep	probe: D dense sampling for cone_sep
