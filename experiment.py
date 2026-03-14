@@ -22,6 +22,7 @@ import benchmark_v2
 RUN_ARTIFACTS = Path(__file__).resolve().parent / "run_artifacts"
 REPORT_PATH = RUN_ARTIFACTS / "v2_latest_report.json"
 RESULTS_TSV = Path(__file__).resolve().parent / "benchmark_results.tsv"
+NUMERICAL_BLOWUP_GATE = 1e6
 
 
 def parse_args() -> argparse.Namespace:
@@ -121,6 +122,8 @@ def rope_like_scalar(row: dict[str, object]) -> float:
 def choose_status_auto(row: dict[str, object], *, tsv_path: Path) -> str:
     if bool(row["collapse_fail"]):
         return "discard"
+    if row_has_numerical_failure(row):
+        return "discard"
     if not tsv_path.exists():
         return "keep"
 
@@ -162,6 +165,25 @@ def choose_status_auto(row: dict[str, object], *, tsv_path: Path) -> str:
         return "discard"
 
     return "keep" if my_score < best_score else "discard"
+
+
+def row_has_numerical_failure(row: dict[str, object]) -> bool:
+    core = ("E_rel", "E_rope", "spectrum", "tail", "anisotropy", "nonseparability")
+    for k in core:
+        v = float(row[k])
+        if (not np.isfinite(v)) or abs(v) > NUMERICAL_BLOWUP_GATE:
+            return True
+
+    if bool(row["time_active"]):
+        for k in ("E_eta", "N_boost"):
+            v = float(row[k])
+            if (not np.isfinite(v)) or abs(v) > NUMERICAL_BLOWUP_GATE:
+                return True
+        cone = float(row["cone_sep"])
+        if np.isfinite(cone) and abs(cone) > NUMERICAL_BLOWUP_GATE:
+            return True
+
+    return False
 
 
 def parse_float(text: str) -> float:

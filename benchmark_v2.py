@@ -30,6 +30,7 @@ DEFAULT_D = 384
 
 ETA_GATE = 1e-6
 BOOST_COLLAPSE_GATE = 1e-3
+NUMERICAL_BLOWUP_GATE = 1e6
 
 
 @dataclass(frozen=True)
@@ -511,7 +512,27 @@ def evaluate_pairing(
     cone_sep = float(np.mean(cone_vals)) if cone_vals else float("nan")
     nonsep = float(np.mean(nonsep_vals)) if nonsep_vals else float("nan")
 
-    collapse_fail = bool(spec.time_active and np.isfinite(e_eta) and np.isfinite(n_boost) and e_eta <= ETA_GATE and n_boost <= BOOST_COLLAPSE_GATE)
+    core_metrics = (
+        avg("E_rel"),
+        avg("E_rope"),
+        avg("spectrum"),
+        avg("tail"),
+        avg("anisotropy"),
+        nonsep,
+    )
+    numerical_fail = any((not np.isfinite(v)) or (abs(v) > NUMERICAL_BLOWUP_GATE) for v in core_metrics)
+    if spec.time_active:
+        numerical_fail = numerical_fail or (not np.isfinite(e_eta)) or (not np.isfinite(n_boost))
+        if np.isfinite(cone_sep) and abs(cone_sep) > NUMERICAL_BLOWUP_GATE:
+            numerical_fail = True
+
+    collapse_fail = bool(
+        spec.time_active
+        and (
+            numerical_fail
+            or (np.isfinite(e_eta) and np.isfinite(n_boost) and e_eta <= ETA_GATE and n_boost <= BOOST_COLLAPSE_GATE)
+        )
+    )
 
     return {
         "benchmark_version": BENCHMARK_VERSION,

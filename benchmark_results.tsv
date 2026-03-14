@@ -1,2 +1,186 @@
 commit	benchmark_version	pair	track	active_coords	F	D_rope	D_monster	E_rel	E_rope	spectrum	tail	anisotropy	E_eta	N_boost	cone_sep	nonseparability	collapse_fail	status	description
 63f8965	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.006086	0.032033	0.067092	0.000783	NA	NA	NA	0.000710	false	keep	phase1 primary calibration: C matched-F
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.004759	0.034457	0.052985	0.000927	NA	NA	NA	0.000908	false	keep	hypothesis: increase freq_exponent to 1.1 for C matched-F
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.006086	0.032033	0.067092	0.000783	NA	NA	NA	0.000710	false	discard	rerun: pair C matched-F F96
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.005504	0.033107	0.061535	0.000841	NA	NA	NA	0.000791	false	discard	sweep: C matched-F F96 freq_exponent=1.04
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.005239	0.033611	0.058718	0.000870	NA	NA	NA	0.000831	false	discard	sweep: C matched-F F96 freq_exponent=1.06
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.004991	0.034067	0.055880	0.000899	NA	NA	NA	0.000870	false	discard	sweep: C matched-F F96 freq_exponent=1.08
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.004759	0.034457	0.052985	0.000927	NA	NA	NA	0.000908	false	keep	sweep: C matched-F F96 freq_exponent=1.10
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.004543	0.034763	0.050088	0.000956	NA	NA	NA	0.000945	false	keep	sweep: C matched-F F96 freq_exponent=1.12
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.004342	0.034970	0.047097	0.000985	NA	NA	NA	0.000982	false	keep	sweep: C matched-F F96 freq_exponent=1.14
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.004155	0.035065	0.044101	0.001014	NA	NA	NA	0.001018	false	keep	sweep: C matched-F F96 freq_exponent=1.16
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003983	0.035040	0.042523	0.001043	NA	NA	NA	0.001053	false	keep	sweep: C matched-F F96 freq_exponent=1.18
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003823	0.034891	0.042725	0.001072	NA	NA	NA	0.001086	false	keep	sweep: C matched-F F96 freq_exponent=1.20
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003676	0.034621	0.042901	0.001101	NA	NA	NA	0.001119	false	keep	sweep: C matched-F F96 freq_exponent=1.22
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003542	0.034235	0.043029	0.001130	NA	NA	NA	0.001151	false	keep	sweep: C matched-F F96 freq_exponent=1.24
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003419	0.033747	0.041851	0.001158	NA	NA	NA	0.001181	false	keep	sweep: C matched-F F96 freq_exponent=1.26
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003307	0.033172	0.039281	0.001187	NA	NA	NA	0.001211	false	keep	sweep: C matched-F F96 freq_exponent=1.28
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003206	0.032532	0.036138	0.001215	NA	NA	NA	0.001239	false	keep	sweep: C matched-F F96 freq_exponent=1.30
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003115	0.031846	0.033055	0.001243	NA	NA	NA	0.001266	false	keep	sweep: C matched-F F96 freq_exponent=1.32
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003034	0.031136	0.030064	0.001270	NA	NA	NA	0.001292	false	keep	sweep: C matched-F F96 freq_exponent=1.34
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002963	0.030420	0.027442	0.001297	NA	NA	NA	0.001317	false	keep	sweep: C matched-F F96 freq_exponent=1.36
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002901	0.029711	0.026360	0.001324	NA	NA	NA	0.001341	false	keep	sweep: C matched-F F96 freq_exponent=1.38
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002849	0.029017	0.024999	0.001350	NA	NA	NA	0.001364	false	keep	sweep: C matched-F F96 freq_exponent=1.40
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002805	0.028340	0.023349	0.001376	NA	NA	NA	0.001386	false	keep	sweep: C matched-F F96 freq_exponent=1.42
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002770	0.027681	0.022519	0.001401	NA	NA	NA	0.001407	false	keep	sweep: C matched-F F96 freq_exponent=1.44
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002743	0.027038	0.021470	0.001425	NA	NA	NA	0.001428	false	keep	sweep: C matched-F F96 freq_exponent=1.46
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002725	0.026412	0.020138	0.001449	NA	NA	NA	0.001448	false	keep	sweep: C matched-F F96 freq_exponent=1.48
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002714	0.025808	0.019339	0.001473	NA	NA	NA	0.001467	false	keep	sweep: C matched-F F96 freq_exponent=1.50
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.004490	0.029252	0.040073	0.001761	NA	NA	NA	0.001964	false	discard	binsearch: C matched-F F96 freq_exponent=2.00
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003175	0.024549	0.016542	0.001702	NA	NA	NA	0.001706	false	keep	binsearch: C matched-F F96 freq_exponent=1.75
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003746	0.027468	0.028496	0.001756	NA	NA	NA	0.001834	false	discard	binsearch: C matched-F F96 freq_exponent=1.875
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003436	0.026012	0.022632	0.001735	NA	NA	NA	0.001769	false	discard	binsearch: C matched-F F96 freq_exponent=1.8125
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003299	0.025257	0.019419	0.001720	NA	NA	NA	0.001737	false	discard	binsearch: C matched-F F96 freq_exponent=1.78125
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003235	0.024893	0.017937	0.001712	NA	NA	NA	0.001722	false	discard	binsearch: C matched-F F96 freq_exponent=1.765625
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003205	0.024718	0.017228	0.001707	NA	NA	NA	0.001714	false	discard	binsearch: C matched-F F96 freq_exponent=1.7578125
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002816	0.023329	0.013228	0.001605	NA	NA	NA	0.001585	false	keep	binsearch: C matched-F F96 freq_exponent=1.625
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002730	0.024186	0.015975	0.001542	NA	NA	NA	0.001526	false	discard	binsearch: C matched-F F96 freq_exponent=1.5625
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002966	0.023510	0.013470	0.001659	NA	NA	NA	0.001644	false	discard	binsearch: C matched-F F96 freq_exponent=1.6875
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002765	0.023634	0.013613	0.001574	NA	NA	NA	0.001556	false	discard	binsearch: C matched-F F96 freq_exponent=1.59375
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002883	0.023291	0.013546	0.001633	NA	NA	NA	0.001615	false	discard	binsearch: C matched-F F96 freq_exponent=1.65625
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002788	0.023449	0.013233	0.001590	NA	NA	NA	0.001570	false	discard	binsearch: C matched-F F96 freq_exponent=1.609375
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002848	0.023276	0.013299	0.001619	NA	NA	NA	0.001600	false	discard	binsearch: C matched-F F96 freq_exponent=1.640625
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.005513	0.000000	0.121669	0.000000	NA	NA	NA	0.000000	false	keep	phase2 baseline: B matched-F F96
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.005952	0.023703	0.063535	0.000271	NA	NA	NA	0.000092	false	keep	phase2 baseline: F matched-F F96
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002816	0.023329	0.013228	0.001605	NA	NA	NA	0.001585	false	keep	checkpoint: C matched-F F96 freq_exponent=1.625
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002822	0.046639	0.022073	0.000925	NA	NA	NA	0.001075	false	discard	grid2d: C matched-F F96 exp=1.625 fs=0.80 rs=0.80
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002318	0.039289	0.009566	0.001198	NA	NA	NA	0.001354	false	discard	grid2d: C matched-F F96 exp=1.625 fs=0.80 rs=1.00
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002673	0.026311	0.012053	0.001530	NA	NA	NA	0.001550	false	discard	grid2d: C matched-F F96 exp=1.625 fs=0.80 rs=1.20
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002318	0.039289	0.009566	0.001198	NA	NA	NA	0.001354	false	discard	grid2d: C matched-F F96 exp=1.625 fs=1.00 rs=0.80
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002816	0.023329	0.013228	0.001605	NA	NA	NA	0.001585	false	keep	grid2d: C matched-F F96 exp=1.625 fs=1.00 rs=1.00
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003611	0.031217	0.016360	0.001846	NA	NA	NA	0.001698	false	discard	grid2d: C matched-F F96 exp=1.625 fs=1.00 rs=1.20
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002673	0.026311	0.012053	0.001530	NA	NA	NA	0.001550	false	discard	grid2d: C matched-F F96 exp=1.625 fs=1.20 rs=0.80
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003611	0.031217	0.016360	0.001846	NA	NA	NA	0.001698	false	discard	grid2d: C matched-F F96 exp=1.625 fs=1.20 rs=1.00
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.004611	0.033461	0.034887	0.001935	NA	NA	NA	0.001788	false	discard	grid2d: C matched-F F96 exp=1.625 fs=1.20 rs=1.20
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.003188	0.023993	0.015598	0.001658	NA	NA	NA	0.001665	false	discard	sweep-theta: C matched-F F96 exp=1.625 theta_base=3000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002993	0.023459	0.013716	0.001639	NA	NA	NA	0.001628	false	discard	sweep-theta: C matched-F F96 exp=1.625 theta_base=5000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002864	0.023302	0.013283	0.001616	NA	NA	NA	0.001598	false	discard	sweep-theta: C matched-F F96 exp=1.625 theta_base=8000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002816	0.023329	0.013228	0.001605	NA	NA	NA	0.001585	false	keep	sweep-theta: C matched-F F96 exp=1.625 theta_base=10000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002781	0.023394	0.013225	0.001595	NA	NA	NA	0.001575	false	discard	sweep-theta: C matched-F F96 exp=1.625 theta_base=12000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002734	0.023568	0.013287	0.001579	NA	NA	NA	0.001560	false	discard	sweep-theta: C matched-F F96 exp=1.625 theta_base=16000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002680	0.023937	0.013497	0.001556	NA	NA	NA	0.001541	false	discard	sweep-theta: C matched-F F96 exp=1.625 theta_base=24000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002629	0.024548	0.013934	0.001527	NA	NA	NA	0.001518	false	discard	sweep-theta: C matched-F F96 exp=1.625 theta_base=40000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002747	0.023849	0.014711	0.001560	NA	NA	NA	0.001543	false	discard	grid2d-exptheta: C matched-F F96 exp=1.58 theta_base=10000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002704	0.024044	0.014075	0.001550	NA	NA	NA	0.001533	false	discard	grid2d-exptheta: C matched-F F96 exp=1.58 theta_base=12000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002643	0.024400	0.013926	0.001532	NA	NA	NA	0.001519	false	discard	grid2d-exptheta: C matched-F F96 exp=1.58 theta_base=16000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002807	0.023360	0.013221	0.001600	NA	NA	NA	0.001580	false	discard	grid2d-exptheta: C matched-F F96 exp=1.62 theta_base=10000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002771	0.023441	0.013234	0.001590	NA	NA	NA	0.001570	false	discard	grid2d-exptheta: C matched-F F96 exp=1.62 theta_base=12000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002722	0.023638	0.013322	0.001574	NA	NA	NA	0.001555	false	discard	grid2d-exptheta: C matched-F F96 exp=1.62 theta_base=16000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002892	0.023305	0.013623	0.001636	NA	NA	NA	0.001618	false	discard	grid2d-exptheta: C matched-F F96 exp=1.66 theta_base=10000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002865	0.023261	0.013400	0.001627	NA	NA	NA	0.001608	false	discard	grid2d-exptheta: C matched-F F96 exp=1.66 theta_base=12000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002827	0.023268	0.013265	0.001613	NA	NA	NA	0.001592	false	keep	grid2d-exptheta: C matched-F F96 exp=1.66 theta_base=16000
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002816	0.023329	0.013228	0.001605	NA	NA	NA	0.001585	false	discard	multiseed: C matched-F F96 cfg=old exp=1.625 theta_base=10000 seed=0
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002831	0.025186	0.013972	0.001612	NA	NA	NA	0.001593	false	discard	multiseed: C matched-F F96 cfg=old exp=1.625 theta_base=10000 seed=1
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002827	0.024828	0.013869	0.001614	NA	NA	NA	0.001591	false	discard	multiseed: C matched-F F96 cfg=old exp=1.625 theta_base=10000 seed=2
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002824	0.025077	0.014591	0.001609	NA	NA	NA	0.001585	false	discard	multiseed: C matched-F F96 cfg=old exp=1.625 theta_base=10000 seed=3
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002811	0.024384	0.013825	0.001596	NA	NA	NA	0.001579	false	discard	multiseed: C matched-F F96 cfg=old exp=1.625 theta_base=10000 seed=4
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002827	0.023268	0.013265	0.001613	NA	NA	NA	0.001592	false	keep	multiseed: C matched-F F96 cfg=new exp=1.66 theta_base=16000 seed=0
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002843	0.025113	0.014018	0.001620	NA	NA	NA	0.001600	false	discard	multiseed: C matched-F F96 cfg=new exp=1.66 theta_base=16000 seed=1
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002842	0.024794	0.013911	0.001623	NA	NA	NA	0.001598	false	discard	multiseed: C matched-F F96 cfg=new exp=1.66 theta_base=16000 seed=2
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002839	0.025015	0.014631	0.001617	NA	NA	NA	0.001592	false	discard	multiseed: C matched-F F96 cfg=new exp=1.66 theta_base=16000 seed=3
+319cda4	monster-v2.0	C	matched-F	x,y	96	384	384	0.000000	0.002822	0.024326	0.013868	0.001604	NA	NA	NA	0.001586	false	discard	multiseed: C matched-F F96 cfg=new exp=1.66 theta_base=16000 seed=4
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.015640	0.017478	0.202304	0.000000	NA	NA	NA	0.000000	false	discard	phase2-sweep: B matched-F F96 freq_exponent=0.60
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.010198	0.004206	0.161359	0.000000	NA	NA	NA	0.000000	false	discard	phase2-sweep: B matched-F F96 freq_exponent=0.80
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.005513	0.000000	0.121669	0.000000	NA	NA	NA	0.000000	false	discard	phase2-sweep: B matched-F F96 freq_exponent=1.00
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.002318	0.002593	0.089735	0.000000	NA	NA	NA	0.000000	false	keep	phase2-sweep: B matched-F F96 freq_exponent=1.20
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.000702	0.005026	0.064238	0.000000	NA	NA	NA	0.000000	false	keep	phase2-sweep: B matched-F F96 freq_exponent=1.40
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.000484	0.007598	0.056467	0.000000	NA	NA	NA	0.000000	false	keep	phase2-sweep: B matched-F F96 freq_exponent=1.60
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.001404	0.010293	0.057744	0.000000	NA	NA	NA	0.000000	false	discard	phase2-sweep: B matched-F F96 freq_exponent=1.80
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.003209	0.013002	0.061025	0.000000	NA	NA	NA	0.000000	false	discard	phase2-sweep: B matched-F F96 freq_exponent=2.00
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.000434	0.006292	0.056874	0.000000	NA	NA	NA	0.000000	false	keep	phase2-refine: B matched-F F96 freq_exponent=1.50
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.000421	0.006940	0.056569	0.000000	NA	NA	NA	0.000000	false	discard	phase2-refine: B matched-F F96 freq_exponent=1.55
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.000484	0.007598	0.056467	0.000000	NA	NA	NA	0.000000	false	discard	phase2-refine: B matched-F F96 freq_exponent=1.60
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.000618	0.008264	0.056551	0.000000	NA	NA	NA	0.000000	false	discard	phase2-refine: B matched-F F96 freq_exponent=1.65
+319cda4	monster-v2.0	B	matched-F	x	96	192	384	0.000000	0.000818	0.008936	0.056801	0.000000	NA	NA	NA	0.000000	false	discard	phase2-refine: B matched-F F96 freq_exponent=1.70
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.009770	0.028798	0.092126	0.000202	NA	NA	NA	0.000027	false	discard	phase2-sweep: F matched-F F96 freq_exponent=0.80
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.005952	0.023703	0.063535	0.000271	NA	NA	NA	0.000092	false	keep	phase2-sweep: F matched-F F96 freq_exponent=1.00
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.003423	0.019682	0.051902	0.000307	NA	NA	NA	0.000198	false	keep	phase2-sweep: F matched-F F96 freq_exponent=1.20
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.002056	0.017772	0.037442	0.000338	NA	NA	NA	0.000325	false	keep	phase2-sweep: F matched-F F96 freq_exponent=1.40
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001633	0.017282	0.029104	0.000380	NA	NA	NA	0.000456	false	keep	phase2-sweep: F matched-F F96 freq_exponent=1.60
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001944	0.020438	0.024356	0.000433	NA	NA	NA	0.000577	false	keep	phase2-sweep: F matched-F F96 freq_exponent=1.80
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.002812	0.025072	0.038047	0.000489	NA	NA	NA	0.000682	false	discard	phase2-sweep: F matched-F F96 freq_exponent=2.00
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001709	0.018424	0.024351	0.000406	NA	NA	NA	0.000518	false	keep	phase2-refine: F matched-F F96 freq_exponent=1.70
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001808	0.019354	0.023216	0.000419	NA	NA	NA	0.000548	false	keep	phase2-refine: F matched-F F96 freq_exponent=1.75
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001944	0.020438	0.024356	0.000433	NA	NA	NA	0.000577	false	discard	phase2-refine: F matched-F F96 freq_exponent=1.80
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.002115	0.021599	0.025903	0.000447	NA	NA	NA	0.000605	false	discard	phase2-refine: F matched-F F96 freq_exponent=1.85
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.002318	0.022780	0.030250	0.000461	NA	NA	NA	0.000632	false	discard	phase2-refine: F matched-F F96 freq_exponent=1.90
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001754	0.018865	0.023600	0.000412	NA	NA	NA	0.000533	false	keep	phase2-local: F matched-F F96 freq_exponent=1.725
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001780	0.019104	0.023417	0.000416	NA	NA	NA	0.000541	false	discard	phase2-local: F matched-F F96 freq_exponent=1.7375
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001808	0.019354	0.023216	0.000419	NA	NA	NA	0.000548	false	discard	phase2-local: F matched-F F96 freq_exponent=1.75
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001839	0.019614	0.023032	0.000422	NA	NA	NA	0.000556	false	discard	phase2-local: F matched-F F96 freq_exponent=1.7625
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001872	0.019882	0.023490	0.000426	NA	NA	NA	0.000563	false	discard	phase2-local: F matched-F F96 freq_exponent=1.775
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001730	0.018638	0.023765	0.000409	NA	NA	NA	0.000526	false	keep	phase2-bisect: F matched-F F96 freq_exponent=1.7125
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001742	0.018750	0.023685	0.000411	NA	NA	NA	0.000530	false	discard	phase2-bisect: F matched-F F96 freq_exponent=1.71875
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001754	0.018865	0.023600	0.000412	NA	NA	NA	0.000533	false	discard	phase2-bisect: F matched-F F96 freq_exponent=1.725
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001766	0.018983	0.023511	0.000414	NA	NA	NA	0.000537	false	discard	phase2-bisect: F matched-F F96 freq_exponent=1.73125
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001719	0.018529	0.024003	0.000407	NA	NA	NA	0.000522	false	discard	phase2-final: F matched-F F96 freq_exponent=1.70625
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001725	0.018583	0.023828	0.000408	NA	NA	NA	0.000524	false	discard	phase2-final: F matched-F F96 freq_exponent=1.709375
+319cda4	monster-v2.0	F	matched-F	x,y,z	96	576	384	0.000000	0.001730	0.018638	0.023765	0.000409	NA	NA	NA	0.000526	false	keep	phase2-final: F matched-F F96 freq_exponent=1.7125
+319cda4	monster-v2.0	A	matched-F	t	96	192	384	90155819426229309810643707253731894001127324462566845442411018832671366029460044995955935995215478784.000000	162260273734031042353304153342909995142134321429618814261772041885870932426159820678477623279208103936.000000	0.060978	227996945564362564699557833754867381502127597006534008098398329513668872955212992645286860644801804906003780159015034445258456959327503486024592971175384932424111537862300260521533036677931675964138851955038186787091143853097499444557337357326385278276197945143454806835200.000000	7338725348208894219026169337538872098126080065293623223037403397161410222554588122868252527296512.000000	NA	NA	NA	0.000000	false	keep	phase3 baseline: A matched-F F96
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	90153723034703480330867454795885160420181239590119793620773144392158129643560686467362660209137811456.000000	162260273734031042353304153342909995142134321429618814261772041885870932426159820678477623279208103936.000000	0.086238	4143177710302964299009091962739602719071276864614470927756884579988903526001424122802980760682613206186259254402010844964804455355704908019533974008736224349705575422526551023616066657546596538343925127374765044542375746109196008467897696940731726654581380236357453118020071848935424.000000	7905407123143381112682338769076820167981284636206674808283382373778345307195330952232923190788096.000000	NA	NA	NA	NA	false	keep	phase3 baseline: D matched-F F96
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	90141761868097792487608269812345089383926582217244501018035231832884972751066111179057067072952467456.000000	162260273734031166684113255789570533987696358134828839375809741222800292542154043968351876412551987200.000000	0.079334	3097261329826127136860547916529338429169958604684707971772879670710410828519652385230997122327959325785660993091498914302845817686393020069766446805478592022471200932467476794610965753091562117248723809464939951669822272697803577585253961796403004446488442139256915163869138980438016.000000	10497121765817514553963270170478125901460815959597161179933207227328723296703069456825091790733312.000000	NA	NA	1388717633558354585464169708585887760491961384960.000000	NA	false	keep	phase3 baseline: E matched-F F96
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	90141761868097730322203718589014819961145563864639488461016382164420292693068999534119940506280525824.000000	162260273734031042353304153342909995142134321429618814261772041885870932426159820678477623279208103936.000000	0.062181	4143177710302964299009091962739602719071276864614470927756884579988903526001424122802980760682613206186259254402010844964804455355704908019533974008736224349705575422526551023616066657546596538343925127374765044542375746109196008467897696940731726654581380236357453118020071848935424.000000	10397922690843047219643697733574597170264218890102820331913933545758709236346029172993606257999872.000000	NA	NA	230930671534150182482797261904938207896305401856.000000	NA	false	keep	phase3 baseline: G matched-F F96
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.000058	0.000136	0.014569	0.331656	0.000001	0.000000	0.084151	NA	0.001965	false	keep	phase3-stability: D matched-F F96 boost_scale=0.0005
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.002181	0.004409	0.015197	0.363512	0.000029	0.000000	0.251644	NA	0.002475	false	discard	phase3-stability: D matched-F F96 boost_scale=0.001
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	1.138929	1.569845	0.020930	0.685433	0.013631	0.000000	2.931406	NA	0.156407	false	discard	phase3-stability: D matched-F F96 boost_scale=0.002
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	1085.740833	1170.534946	0.025191	3.496274	11.879735	0.000000	75.429016	NA	381.973080	false	discard	phase3-stability: D matched-F F96 boost_scale=0.003
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	3148268954.779570	2764162051.103714	0.035317	359.453218	30681933.553761	0.000000	120466.592309	NA	2920065206.058097	false	discard	phase3-stability: D matched-F F96 boost_scale=0.005
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	362332867769574910339317760.000000	266151604355931367792443392.000000	0.058716	98608514.948743	2807888148812340148568064.000000	0.000793	39739771229180.773438	NA	635284763185450343175553024.000000	false	discard	phase3-stability: D matched-F F96 boost_scale=0.01
+319cda4	monster-v2.0	A	matched-F	t	96	192	384	0.000059	0.000136	0.016808	0.661826	0.000000	0.000000	0.084151	NA	0.000000	false	keep	phase3-stability: A matched-F F96 boost_scale=0.0005
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.000057	0.000136	0.076566	0.238799	0.000012	0.000000	0.084151	0.038602	0.001406	false	keep	phase3-stability: E matched-F F96 boost_scale=0.0005
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.000057	0.000136	0.104895	0.205662	0.000015	0.000000	0.084151	0.027800	0.000585	false	keep	phase3-stability: G matched-F F96 boost_scale=0.0005
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.000020	0.000048	0.013859	0.367598	0.000000	0.000000	0.055250	NA	0.000845	false	discard	phase3-sweep: D matched-F F96 boost=0.0005 freq_exponent=0.80
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.000058	0.000136	0.014569	0.331656	0.000001	0.000000	0.084151	NA	0.001965	false	keep	phase3-sweep: D matched-F F96 boost=0.0005 freq_exponent=1.00
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.000130	0.000302	0.015829	0.303190	0.000002	0.000000	0.115369	NA	0.003501	false	keep	phase3-sweep: D matched-F F96 boost=0.0005 freq_exponent=1.20
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.000240	0.000557	0.017583	0.283965	0.000003	0.000000	0.147094	NA	0.005354	false	keep	phase3-sweep: D matched-F F96 boost=0.0005 freq_exponent=1.40
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.000390	0.000902	0.019627	0.269813	0.000005	0.000000	0.178269	NA	0.007431	false	keep	phase3-sweep: D matched-F F96 boost=0.0005 freq_exponent=1.60
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.000577	0.001329	0.021753	0.259194	0.000008	0.000000	0.208306	NA	0.009656	false	keep	phase3-sweep: D matched-F F96 boost=0.0005 freq_exponent=1.80
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.000794	0.001827	0.023815	0.251255	0.000011	0.000000	0.236905	NA	0.011968	false	keep	phase3-sweep: D matched-F F96 boost=0.0005 freq_exponent=2.00
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.001038	0.002383	0.025728	0.245330	0.000014	0.000000	0.263940	NA	0.014323	false	keep	phase3-extend: D matched-F F96 boost=0.0005 freq_exponent=2.20
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.001441	0.003301	0.028243	0.239165	0.000019	0.000000	0.301523	NA	0.017862	false	keep	phase3-extend: D matched-F F96 boost=0.0005 freq_exponent=2.50
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.002173	0.004964	0.031494	0.233524	0.000029	0.000000	0.356699	NA	0.023616	false	discard	phase3-extend: D matched-F F96 boost=0.0005 freq_exponent=3.00
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.002935	0.006691	0.033796	0.238449	0.000039	0.000000	0.403705	NA	0.029051	false	discard	phase3-extend: D matched-F F96 boost=0.0005 freq_exponent=3.50
+319cda4	monster-v2.0	A	matched-F	t	96	192	384	0.000059	0.000136	0.016808	0.661826	0.000000	0.000000	0.084151	NA	0.000000	false	discard	phase3-sweep: A matched-F F96 boost=0.0005 freq_exponent=1.00
+319cda4	monster-v2.0	A	matched-F	t	96	192	384	0.000315	0.000719	0.016674	0.669616	0.000002	0.000000	0.162796	NA	0.000000	false	discard	phase3-sweep: A matched-F F96 boost=0.0005 freq_exponent=1.50
+319cda4	monster-v2.0	A	matched-F	t	96	192	384	0.000806	0.001827	0.016598	0.677700	0.000005	0.000000	0.236905	NA	0.000000	false	discard	phase3-sweep: A matched-F F96 boost=0.0005 freq_exponent=2.00
+319cda4	monster-v2.0	A	matched-F	t	96	192	384	0.001462	0.003301	0.016556	0.685105	0.000010	0.000000	0.301523	NA	0.000000	false	discard	phase3-sweep: A matched-F F96 boost=0.0005 freq_exponent=2.50
+319cda4	monster-v2.0	A	matched-F	t	96	192	384	0.002205	0.004964	0.016532	0.691619	0.000015	0.000000	0.356699	NA	0.000000	false	discard	phase3-sweep: A matched-F F96 boost=0.0005 freq_exponent=3.00
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.000057	0.000136	0.076566	0.238799	0.000012	0.000000	0.084151	0.038602	0.001406	false	keep	phase3-sweep: E matched-F F96 boost=0.0005 freq_exponent=1.00
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.000303	0.000719	0.074966	0.208613	0.000033	0.000000	0.162796	0.060662	0.002641	false	keep	phase3-sweep: E matched-F F96 boost=0.0005 freq_exponent=1.50
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.000776	0.001827	0.081711	0.202406	0.000061	0.000000	0.236905	0.082117	0.003785	false	discard	phase3-sweep: E matched-F F96 boost=0.0005 freq_exponent=2.00
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.001407	0.003301	0.068022	0.177897	0.000102	0.000000	0.301523	0.033055	0.005089	false	keep	phase3-sweep: E matched-F F96 boost=0.0005 freq_exponent=2.50
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.002122	0.004964	0.046257	0.138514	0.000131	0.000000	0.356699	0.052696	0.006190	false	keep	phase3-sweep: E matched-F F96 boost=0.0005 freq_exponent=3.00
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.000057	0.000136	0.104895	0.205662	0.000015	0.000000	0.084151	0.027800	0.000585	false	discard	phase3-sweep: G matched-F F96 boost=0.0005 freq_exponent=1.00
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.000303	0.000719	0.091849	0.136431	0.000037	0.000000	0.162796	0.027880	0.000916	false	keep	phase3-sweep: G matched-F F96 boost=0.0005 freq_exponent=1.50
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.000776	0.001827	0.078790	0.105263	0.000061	0.000000	0.236905	0.023004	0.001324	false	keep	phase3-sweep: G matched-F F96 boost=0.0005 freq_exponent=2.00
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.001407	0.003301	0.067946	0.070529	0.000083	0.000000	0.301523	0.023255	0.001865	false	keep	phase3-sweep: G matched-F F96 boost=0.0005 freq_exponent=2.50
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002122	0.004964	0.060488	0.043258	0.000104	0.000000	0.356699	0.028114	0.002409	false	keep	phase3-sweep: G matched-F F96 boost=0.0005 freq_exponent=3.00
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.001168	0.002680	0.026616	0.242962	0.000016	0.000000	0.276860	NA	0.015505	false	discard	phase3-refine: D matched-F F96 boost=0.0005 freq_exponent=2.30
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.001441	0.003301	0.028243	0.239165	0.000019	0.000000	0.301523	NA	0.017862	false	keep	phase3-refine: D matched-F F96 boost=0.0005 freq_exponent=2.50
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.001727	0.003951	0.029677	0.236364	0.000023	0.000000	0.324664	NA	0.020195	false	keep	phase3-refine: D matched-F F96 boost=0.0005 freq_exponent=2.70
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.002023	0.004623	0.030930	0.234320	0.000027	0.000000	0.346363	NA	0.022488	false	discard	phase3-refine: D matched-F F96 boost=0.0005 freq_exponent=2.90
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.002122	0.004964	0.046257	0.138514	0.000131	0.000000	0.356699	0.052696	0.006190	false	keep	phase3-extend: E matched-F F96 boost=0.0005 freq_exponent=3.00
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.002867	0.006691	0.035436	0.127902	0.000146	0.000000	0.403705	0.062936	0.007265	false	keep	phase3-extend: E matched-F F96 boost=0.0005 freq_exponent=3.50
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.003607	0.008403	0.039267	0.133124	0.000162	0.000000	0.443934	0.076584	0.008432	false	discard	phase3-extend: E matched-F F96 boost=0.0005 freq_exponent=4.00
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.004322	0.010057	0.047274	0.138087	0.000185	0.000000	0.478605	0.081134	0.009435	false	discard	phase3-extend: E matched-F F96 boost=0.0005 freq_exponent=4.50
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002122	0.004964	0.060488	0.043258	0.000104	0.000000	0.356699	0.028114	0.002409	false	discard	phase3-extend: G matched-F F96 boost=0.0005 freq_exponent=3.00
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002867	0.006691	0.058054	0.060662	0.000127	0.000000	0.403705	0.031210	0.002896	false	discard	phase3-extend: G matched-F F96 boost=0.0005 freq_exponent=3.50
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.003607	0.008403	0.058641	0.078992	0.000149	0.000000	0.443934	0.033344	0.003313	false	discard	phase3-extend: G matched-F F96 boost=0.0005 freq_exponent=4.00
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.004322	0.010057	0.058960	0.088017	0.000172	0.000000	0.478605	0.035759	0.003661	false	discard	phase3-extend: G matched-F F96 boost=0.0005 freq_exponent=4.50
+319cda4	monster-v2.0	A	equal-D	t	96	384	384	0.000059	0.000136	0.015620	0.672226	0.000000	0.000000	0.084151	NA	0.000000	false	keep	equal-D tuned: A D384 exp=1.0 bs=0.0005
+319cda4	monster-v2.0	B	equal-D	x	96	384	384	0.000000	0.000452	0.005093	0.058178	0.000000	NA	NA	NA	0.000000	false	keep	equal-D tuned: B D384 exp=1.5 bs=1.0
+319cda4	monster-v2.0	C	equal-D	x,y	96	384	384	0.000000	0.002816	0.023329	0.013228	0.001605	NA	NA	NA	0.001585	false	keep	equal-D tuned: C D384 exp=1.625 bs=1.0
+319cda4	monster-v2.0	D	equal-D	t,x	96	384	384	0.001727	0.003951	0.029677	0.236364	0.000023	0.000000	0.324664	NA	0.020195	false	keep	equal-D tuned: D D384 exp=2.7 bs=0.0005
+319cda4	monster-v2.0	E	equal-D	t,x,y	96	384	384	0.002867	0.006691	0.034917	0.121242	0.000146	0.000000	0.403705	0.062936	0.007265	false	keep	equal-D tuned: E D384 exp=3.5 bs=0.0005
+319cda4	monster-v2.0	F	equal-D	x,y,z	96	384	384	0.000000	0.001714	0.018490	0.022685	0.000409	NA	NA	NA	0.000526	false	keep	equal-D tuned: F D384 exp=1.7125 bs=1.0
+319cda4	monster-v2.0	G	equal-D	t,x,y,z	96	384	384	0.002122	0.004964	0.059829	0.042811	0.000104	0.000000	0.356699	0.028114	0.002409	false	keep	equal-D tuned: G D384 exp=3.0 bs=0.0005
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	90153723034703480330867454795885160420181239590119793620773144392158129643560686467362660209137811456.000000	162260273734031042353304153342909995142134321429618814261772041885870932426159820678477623279208103936.000000	0.086238	4143177710302964299009091962739602719071276864614470927756884579988903526001424122802980760682613206186259254402010844964804455355704908019533974008736224349705575422526551023616066657546596538343925127374765044542375746109196008467897696940731726654581380236357453118020071848935424.000000	7905407123143381112682338769076820167981284636206674808283382373778345307195330952232923190788096.000000	NA	NA	NA	NA	true	discard	gate-check: D unstable default boost
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.001582	0.003623	0.028983	0.237657	0.000021	0.000000	0.313279	NA	0.019033	false	discard	phase3-local: D matched-F F96 boost=0.0005 freq_exponent=2.60
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.001727	0.003951	0.029677	0.236364	0.000023	0.000000	0.324664	NA	0.020195	false	discard	phase3-local: D matched-F F96 boost=0.0005 freq_exponent=2.70
+319cda4	monster-v2.0	D	matched-F	t,x	96	384	384	0.001874	0.004285	0.030325	0.235260	0.000025	0.000000	0.335688	NA	0.021347	false	discard	phase3-local: D matched-F F96 boost=0.0005 freq_exponent=2.80
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.002568	0.005998	0.037631	0.127259	0.000141	0.000000	0.385791	0.061835	0.006814	false	discard	phase3-local: E matched-F F96 boost=0.0005 freq_exponent=3.30
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.002867	0.006691	0.035436	0.127902	0.000146	0.000000	0.403705	0.062936	0.007265	false	keep	phase3-local: E matched-F F96 boost=0.0005 freq_exponent=3.50
+319cda4	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.003165	0.007381	0.035725	0.129199	0.000152	0.000000	0.420537	0.067690	0.007735	false	discard	phase3-local: E matched-F F96 boost=0.0005 freq_exponent=3.70
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.001830	0.004285	0.062861	0.051732	0.000096	0.000000	0.335688	0.026199	0.002197	false	discard	phase3-local: G matched-F F96 boost=0.0005 freq_exponent=2.80
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002122	0.004964	0.060488	0.043258	0.000104	0.000000	0.356699	0.028114	0.002409	false	discard	phase3-local: G matched-F F96 boost=0.0005 freq_exponent=3.00
+319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002419	0.005652	0.058961	0.049437	0.000113	0.000000	0.376401	0.029630	0.002612	false	discard	phase3-local: G matched-F F96 boost=0.0005 freq_exponent=3.20
