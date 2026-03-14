@@ -184,3 +184,12 @@ commit	benchmark_version	pair	track	active_coords	F	D_rope	D_monster	E_rel	E_rop
 319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.001830	0.004285	0.062861	0.051732	0.000096	0.000000	0.335688	0.026199	0.002197	false	discard	phase3-local: G matched-F F96 boost=0.0005 freq_exponent=2.80
 319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002122	0.004964	0.060488	0.043258	0.000104	0.000000	0.356699	0.028114	0.002409	false	discard	phase3-local: G matched-F F96 boost=0.0005 freq_exponent=3.00
 319cda4	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002419	0.005652	0.058961	0.049437	0.000113	0.000000	0.376401	0.029630	0.002612	false	discard	phase3-local: G matched-F F96 boost=0.0005 freq_exponent=3.20
+ef96e4b	monster-v2.0	D	matched-F	t,x	96	384	384	0.001727	0.003951	0.029677	0.236364	0.000023	0.000000	0.324664	NA	0.020195	false	discard	multiseed-phase3: D matched-F F96 exp=2.7 bs=0.0005 seed=0
+ef96e4b	monster-v2.0	D	matched-F	t,x	96	384	384	0.001723	0.003702	0.028424	0.236176	0.000022	0.000000	0.324664	NA	0.020265	false	keep	multiseed-phase3: D matched-F F96 exp=2.7 bs=0.0005 seed=1
+ef96e4b	monster-v2.0	D	matched-F	t,x	96	384	384	0.001729	0.002211	0.028485	0.236807	0.000023	0.000000	0.324664	NA	0.020170	false	keep	multiseed-phase3: D matched-F F96 exp=2.7 bs=0.0005 seed=2
+ef96e4b	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.002867	0.006691	0.035436	0.127902	0.000146	0.000000	0.403705	0.062936	0.007265	false	keep	multiseed-phase3: E matched-F F96 exp=3.5 bs=0.0005 seed=0
+ef96e4b	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.002862	0.006266	0.035909	0.126640	0.000141	0.000000	0.403705	0.065088	0.007387	false	keep	multiseed-phase3: E matched-F F96 exp=3.5 bs=0.0005 seed=1
+ef96e4b	monster-v2.0	E	matched-F	t,x,y	96	576	384	0.002874	0.003735	0.035976	0.129006	0.000166	0.000000	0.403705	0.067498	0.007499	false	keep	multiseed-phase3: E matched-F F96 exp=3.5 bs=0.0005 seed=2
+ef96e4b	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002122	0.004964	0.060488	0.043258	0.000104	0.000000	0.356699	0.028114	0.002409	false	discard	multiseed-phase3: G matched-F F96 exp=3.0 bs=0.0005 seed=0
+ef96e4b	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002119	0.004650	0.061484	0.047438	0.000098	0.000000	0.356699	0.027044	0.002392	false	discard	multiseed-phase3: G matched-F F96 exp=3.0 bs=0.0005 seed=1
+ef96e4b	monster-v2.0	G	matched-F	t,x,y,z	96	768	384	0.002128	0.002775	0.060808	0.044957	0.000105	0.000000	0.356699	0.026491	0.002351	false	keep	multiseed-phase3: G matched-F F96 exp=3.0 bs=0.0005 seed=2
