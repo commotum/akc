@@ -49,10 +49,9 @@ DEFAULT_SEED = 0
 
 @dataclass(frozen=True)
 class MonsterConfig:
-    # Geometry / span
-    span: float = 2.0 * math.pi
-    top_delta: float = float(max(DEFAULT_WINDOWS))
-    unit: float | None = 1.0
+    # Coordinate units
+    t_unit: float = 1.0
+    s_unit: float = 1.0
 
     # Frequency family
     theta_base: float = DEFAULT_THETA_BASE
@@ -76,12 +75,12 @@ def config_dict(config: MonsterConfig) -> dict[str, float | str | None]:
     return asdict(config)
 
 
-def resolved_unit(config: MonsterConfig) -> float:
-    if config.unit is not None:
-        return float(config.unit)
-    if config.top_delta == 0:
-        raise ValueError("top_delta must be non-zero when unit is not provided")
-    return float(config.span) / float(config.top_delta)
+def resolved_units(config: MonsterConfig) -> tuple[float, float]:
+    t_unit = float(config.t_unit)
+    s_unit = float(config.s_unit)
+    if (not np.isfinite(t_unit)) or (not np.isfinite(s_unit)):
+        raise ValueError("t_unit and s_unit must be finite")
+    return t_unit, s_unit
 
 
 # ---------------------------------------------------------------------------
@@ -291,7 +290,7 @@ def _build_lorentz_block_transforms(
 ) -> np.ndarray:
     length = positions_4d.shape[0]
     num_freq = dim // 4
-    unit = resolved_unit(config)
+    t_unit, s_unit = resolved_units(config)
     inv_freq = warped_frequencies(
         num_freq,
         theta_base=float(config.theta_base),
@@ -304,8 +303,8 @@ def _build_lorentz_block_transforms(
     spatial = positions_4d[:, 1:4]   # (L,3)
     proj = spatial @ axes.T          # (L,F)
 
-    phi = t * (unit * float(config.boost_scale)) * inv_freq[None, :]
-    theta = proj * (unit * float(config.rotation_scale)) * inv_freq[None, :]
+    phi = t * (t_unit * float(config.boost_scale)) * inv_freq[None, :]
+    theta = proj * (s_unit * float(config.rotation_scale)) * inv_freq[None, :]
 
     ch = np.cosh(phi)
     sh = np.sinh(phi)
@@ -342,7 +341,7 @@ def _build_dual_plane_block_transforms(
 ) -> np.ndarray:
     length = positions_4d.shape[0]
     num_freq = dim // 4
-    unit = resolved_unit(config)
+    t_unit, s_unit = resolved_units(config)
     axes = build_axes(num_freq, config)
     u, v = tangent_frames(axes)
 
@@ -380,8 +379,8 @@ def _build_dual_plane_block_transforms(
     else:
         raise ValueError(f"unknown dual_freq_mode: {config.dual_freq_mode}")
 
-    phi = proj * (unit * float(config.boost_scale)) * inv_phi[None, :]
-    theta = proj * (unit * float(config.rotation_scale)) * inv_theta[None, :]
+    phi = proj * (t_unit * float(config.boost_scale)) * inv_phi[None, :]
+    theta = proj * (s_unit * float(config.rotation_scale)) * inv_theta[None, :]
 
     cp = np.cos(phi)
     sp = np.sin(phi)
@@ -745,9 +744,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--max-pairs-per-window", type=int, default=DEFAULT_MAX_PAIRS_PER_WINDOW)
 
     # MonSTER hyperparameters
-    p.add_argument("--span", type=float, default=2.0 * math.pi)
-    p.add_argument("--top-delta", type=float, default=float(max(DEFAULT_WINDOWS)))
-    p.add_argument("--unit", type=float, default=1.0, help="set to NaN to derive unit=span/top_delta")
+    p.add_argument("--t-unit", type=float, default=1.0)
+    p.add_argument("--s-unit", type=float, default=1.0)
     p.add_argument("--theta-base", type=float, default=DEFAULT_THETA_BASE)
     p.add_argument("--freq-scale", type=float, default=1.0)
     p.add_argument("--freq-exponent", type=float, default=1.0)
@@ -766,16 +764,9 @@ def main() -> None:
     args = parse_args()
     windows = parse_windows(args.windows)
 
-    unit_value: float | None
-    if args.unit is None or (isinstance(args.unit, float) and not np.isfinite(args.unit)):
-        unit_value = None
-    else:
-        unit_value = float(args.unit)
-
     monster_cfg = MonsterConfig(
-        span=float(args.span),
-        top_delta=float(args.top_delta),
-        unit=unit_value,
+        t_unit=float(args.t_unit),
+        s_unit=float(args.s_unit),
         theta_base=float(args.theta_base),
         freq_scale=float(args.freq_scale),
         freq_exponent=float(args.freq_exponent),

@@ -106,6 +106,35 @@ def canonical_coords(length: int) -> np.ndarray:
     return np.concatenate((t[:, None], xyz), axis=1)
 
 
+def apply_time_warp(
+    coords_txyz: np.ndarray,
+    *,
+    mode: str = "none",
+    tanh_k: float = 1.0,
+    tanh_m: float = 1.0,
+) -> np.ndarray:
+    """
+    Apply an optional time-coordinate warp to canonical (t,x,y,z) coordinates.
+
+    The warp is applied to the shared coordinate bank before both RoPE and MonSTER
+    projections so comparisons remain fair under the same input positions.
+    """
+    out = np.asarray(coords_txyz, dtype=np.float64).copy()
+    mode_norm = str(mode).lower()
+    if mode_norm == "none":
+        return out
+    if mode_norm == "tanh":
+        k = float(tanh_k)
+        m = float(tanh_m)
+        if (not np.isfinite(k)) or k <= 0.0:
+            raise ValueError(f"tanh_k must be a positive finite scalar; got {tanh_k!r}")
+        if not np.isfinite(m):
+            raise ValueError(f"tanh_m must be finite; got {tanh_m!r}")
+        out[:, COORD_INDEX["t"]] = m * np.tanh(k * out[:, COORD_INDEX["t"]])
+        return out
+    raise ValueError(f"unknown time_warp mode: {mode}")
+
+
 def mask_coords(coords_txyz: np.ndarray, active: tuple[str, ...]) -> np.ndarray:
     out = np.zeros_like(coords_txyz, dtype=np.float64)
     for c in active:
@@ -183,9 +212,8 @@ def fixed_monster_config_for_pair(
     overrides: dict[str, object] | None = None,
 ) -> f_monster.MonsterConfig:
     cfg = f_monster.MonsterConfig(
-        span=2.0 * math.pi,
-        top_delta=float(max(DEFAULT_WINDOWS)),
-        unit=1.0,
+        t_unit=1.0,
+        s_unit=1.0,
         theta_base=float(theta_base),
         freq_scale=1.0,
         freq_exponent=1.0,
@@ -474,6 +502,9 @@ def evaluate_pairing(
     theta_base: float,
     rng_seed: int = 0,
     max_pairs_per_window: int = 200_000,
+    time_warp: str = "none",
+    tanh_k: float = 1.0,
+    tanh_m: float = 1.0,
     monster_overrides: dict[str, object] | None = None,
 ) -> dict[str, object]:
     F_used, d_rope, d_monster = dims_for_track(spec=spec, track=track, F=F, D=D)
@@ -492,6 +523,7 @@ def evaluate_pairing(
 
     for length in windows:
         coords = canonical_coords(int(length))
+        coords = apply_time_warp(coords, mode=time_warp, tanh_k=tanh_k, tanh_m=tanh_m)
         rope_coords = select_coords(coords, spec.rope_coords)
         monster_coords = mask_coords(coords, spec.monster_coords)
 
@@ -529,13 +561,17 @@ def evaluate_pairing(
         e_rel = _weighted_mean((s_monster - monster_means[inv]) ** 2, np.ones_like(s_monster))
 
         # For time-active pairings, E_rope is assessed on the dt=0 spatial slice.
+        # At very large windows with fixed random-pair budgets, the dt=0 slice may be
+        # absent (especially for pair A where dt=0 implies p==q). In that case, fall
+        # back to all sampled deltas instead of returning NaN and triggering a false
+        # numerical collapse.
         if spec.time_active and "t" in spec.rope_coords:
             t_idx = spec.rope_coords.index("t")
             slice_mask = keys[:, t_idx] == 0
             if np.any(slice_mask):
                 e_rope = _weighted_mean((monster_means[slice_mask] - rope_means[slice_mask]) ** 2, w[slice_mask])
             else:
-                e_rope = float("nan")
+                e_rope = _weighted_mean((monster_means - rope_means) ** 2, w)
         else:
             e_rope = _weighted_mean((monster_means - rope_means) ** 2, w)
 
@@ -625,6 +661,9 @@ def evaluate_pairing(
         "pair": spec.pair,
         "track": track,
         "active_coords": ",".join(spec.monster_coords),
+        "time_warp": str(time_warp),
+        "tanh_k": float(tanh_k),
+        "tanh_m": float(tanh_m),
         "F": int(F_used),
         "D_rope": int(d_rope),
         "D_monster": int(d_monster),

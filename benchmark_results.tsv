@@ -212,3 +212,47 @@ d9f41db	monster-v2.1	D	equal-D	t,x	96	384	384	0.001727	0.003951	0.029677	0.23636
 d9f41db	monster-v2.1	E	equal-D	t,x,y	96	384	384	0.002867	0.006691	0.034917	0.121242	0.000146	0.000000	0.403705	0.062936	0.007265	false	keep	v2.1-equalD: E D384 exp=3.5 bs=0.0005
 d9f41db	monster-v2.1	F	equal-D	x,y,z	96	384	384	0.000000	0.001714	0.018490	0.022685	0.000409	NA	NA	NA	0.000526	false	keep	v2.1-equalD: F D384 exp=1.7125 bs=1.0
 d9f41db	monster-v2.1	G	equal-D	t,x,y,z	96	384	384	0.002122	0.004964	0.059829	0.042811	0.000104	0.000000	0.356699	0.028114	0.002409	false	keep	v2.1-equalD: G D384 exp=3.0 bs=0.0005
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000000	0.018304	0.656084	0.000000	0.000000	0.018500	NA	0.000000	false	ablation	ablation: A matched-F t_unit sweep t=0.25 s=1.0
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000003	0.000007	0.017905	0.657192	0.000000	0.000000	0.037988	NA	0.000000	false	ablation	ablation: A matched-F t_unit sweep t=0.5 s=1.0
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000017	0.000039	0.017353	0.659084	0.000000	0.000000	0.059489	NA	0.000000	false	ablation	ablation: A matched-F t_unit sweep t=0.75 s=1.0
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000059	0.000136	0.016808	0.661826	0.000000	0.000000	0.084151	NA	0.000000	false	ablation	ablation: A matched-F t_unit sweep t=1.0 s=1.0
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000169	0.000377	0.016474	0.665522	0.000001	0.000000	0.113395	NA	0.000000	false	ablation	ablation: A matched-F t_unit sweep t=1.25 s=1.0
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000424	0.000918	0.016532	0.670313	0.000003	0.000000	0.149113	NA	0.000000	false	ablation	ablation: A matched-F t_unit sweep t=1.5 s=1.0
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.002214	0.004409	0.017664	0.683987	0.000015	0.000000	0.251644	NA	0.000000	false	ablation	ablation: A matched-F t_unit sweep t=2.0 s=1.0
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.048428	0.079162	0.020377	0.737667	0.000314	0.000000	0.768714	NA	0.000000	false	ablation	ablation: A matched-F t_unit sweep t=3.0 s=1.0
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000000	0.018443	0.655734	0.000000	0.000000	0.003668	NA	0.000000	false	ablation	ablation: A matched-F t_unit sweep t=0.05 s=1.0
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000000	0.018425	0.655777	0.000000	0.000000	0.007345	NA	0.000000	false	ablation	ablation: A matched-F t_unit sweep t=0.1 s=1.0
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000000	0.018396	0.655850	0.000000	0.000000	0.011037	NA	0.000000	false	ablation	ablation: A matched-F t_unit sweep t=0.15 s=1.0
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000000	0.018355	0.655952	0.000000	0.000000	0.014752	NA	0.000000	false	ablation	ablation: A matched-F t_unit sweep t=0.2 s=1.0
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	0.000007	NA	0.000000	true	ablation	ablation: A matched-F tanh(k*t) sweep k=0.0001
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	0.000014	NA	0.000000	true	ablation	ablation: A matched-F tanh(k*t) sweep k=0.0002
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000001	0.000000	0.001960	0.000000	0.000000	0.000021	NA	0.000000	true	ablation	ablation: A matched-F tanh(k*t) sweep k=0.0003
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000001	0.000000	0.002631	0.000000	0.000000	0.000033	NA	0.000000	true	ablation	ablation: A matched-F tanh(k*t) sweep k=0.0005
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000002	0.000000	0.005581	0.000000	0.000000	0.000048	NA	0.000000	true	ablation	ablation: A matched-F tanh(k*t) sweep k=0.0008
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000002	0.000000	0.006126	0.000000	0.000000	0.000056	NA	0.000000	true	ablation	ablation: A matched-F tanh(k*t) sweep k=0.001
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000002	0.000000	0.010013	0.000000	0.000000	0.000081	NA	0.000000	true	ablation	ablation: A matched-F tanh(k*t) sweep k=0.002
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000001	0.000000	0.011675	0.000000	0.000000	0.000108	NA	0.000000	true	ablation	ablation: A matched-F tanh(k*t) sweep k=0.005
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	0.000007	NA	0.000000	true	ablation	ablation: A tanh mk grid k=0.0001 m=1
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000005	0.013077	0.187773	0.000000	0.000000	0.000467	NA	0.000000	true	ablation	ablation: A tanh mk grid k=0.0001 m=64
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000006	0.028293	0.310852	0.000000	0.000000	0.001869	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0001 m=256
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000005	0.042128	0.455650	0.000000	0.000000	0.007488	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0001 m=1024
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000008	0.031817	0.513740	0.000000	0.000000	0.015042	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0001 m=2048
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000001	0.000021	0.023648	0.575644	0.000000	0.000000	0.030613	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0001 m=4096
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000001	0.000000	0.001960	0.000000	0.000000	0.000021	NA	0.000000	true	ablation	ablation: A tanh mk grid k=0.0003 m=1
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000006	0.026742	0.271447	0.000000	0.000000	0.001356	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0003 m=64
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000006	0.033904	0.428863	0.000000	0.000000	0.005428	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0003 m=256
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000008	0.030903	0.549719	0.000000	0.000000	0.021944	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0003 m=1024
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000005	0.000037	0.024422	0.610425	0.000000	0.000000	0.045379	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0003 m=2048
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000099	0.000251	0.033500	0.674057	0.000001	0.000000	0.103223	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0003 m=4096
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000001	0.000000	0.002631	0.000000	0.000000	0.000033	NA	0.000000	true	ablation	ablation: A tanh mk grid k=0.0005 m=1
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000006	0.027101	0.320184	0.000000	0.000000	0.002135	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0005 m=64
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000006	0.035650	0.466370	0.000000	0.000000	0.008554	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0005 m=256
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000001	0.000024	0.032040	0.585251	0.000000	0.000000	0.035010	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0005 m=1024
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000023	0.000131	0.029442	0.653091	0.000000	0.000000	0.075177	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0005 m=2048
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000625	0.001786	0.046382	0.722095	0.000006	0.000000	0.197168	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.0005 m=4096
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000002	0.000000	0.006126	0.000000	0.000000	0.000056	NA	0.000000	true	ablation	ablation: A tanh mk grid k=0.001 m=1
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000006	0.025694	0.381851	0.000000	0.000000	0.003574	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.001 m=64
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000000	0.000007	0.035347	0.511966	0.000000	0.000000	0.014339	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.001 m=256
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000004	0.000064	0.028934	0.634003	0.000000	0.000000	0.060046	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.001 m=1024
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.000076	0.000811	0.038257	0.696268	0.000000	0.000000	0.137945	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.001 m=2048
+6ccbdb4	monster-v2.1	A	matched-F	t	96	192	384	0.002945	0.022179	0.040879	0.793748	0.000035	0.000000	0.461192	NA	0.000000	false	ablation	ablation: A tanh mk grid k=0.001 m=4096

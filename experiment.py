@@ -84,6 +84,51 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--freq-scale", type=float, default=1.0, help="MonSTER frequency scale")
     parser.add_argument("--freq-exponent", type=float, default=1.0, help="MonSTER frequency rank exponent")
+    parser.add_argument(
+        "--time-warp",
+        type=str,
+        choices=("none", "tanh"),
+        default="none",
+        help="optional warp applied to the canonical time coordinate before evaluation",
+    )
+    parser.add_argument(
+        "--tanh-k",
+        type=float,
+        default=1.0,
+        help="damping factor k for --time-warp tanh (t' = m*tanh(k*t))",
+    )
+    parser.add_argument(
+        "--tanh-m",
+        type=float,
+        default=1.0,
+        help="multiplier m for --time-warp tanh (t' = m*tanh(k*t))",
+    )
+    parser.add_argument("--t-unit", type=float, default=1.0, help="MonSTER unit scale for time coordinate")
+    parser.add_argument("--s-unit", type=float, default=1.0, help="MonSTER unit scale for spatial coordinates")
+    parser.add_argument(
+        "--span-t",
+        type=float,
+        default=None,
+        help="optional temporal span; if set, overrides t-unit via t_unit = span_t / n_t",
+    )
+    parser.add_argument(
+        "--span-s",
+        type=float,
+        default=None,
+        help="optional spatial span; if set, overrides s-unit via s_unit = span_s / n_s",
+    )
+    parser.add_argument(
+        "--n-t",
+        type=float,
+        default=1.0,
+        help="temporal step/count scale used with --span-t (default: 1.0)",
+    )
+    parser.add_argument(
+        "--n-s",
+        type=float,
+        default=1.0,
+        help="spatial step/count scale used with --span-s (default: 1.0)",
+    )
     parser.add_argument("--boost-scale", type=float, default=1.0, help="MonSTER boost scale")
     parser.add_argument("--rotation-scale", type=float, default=1.0, help="MonSTER rotation scale")
     parser.add_argument("--axis-mode", type=str, default=None, help="optional MonSTER axis mode override")
@@ -213,6 +258,9 @@ def main() -> None:
         theta_base=float(args.theta_base),
         rng_seed=int(args.seed),
         max_pairs_per_window=int(args.max_pairs_per_window),
+        time_warp=str(args.time_warp),
+        tanh_k=float(args.tanh_k),
+        tanh_m=float(args.tanh_m),
         monster_overrides=monster_overrides_from_args(args),
     )
     elapsed = time.time() - t0
@@ -245,6 +293,10 @@ def main() -> None:
     print(f"  pair:              {row['pair']}")
     print(f"  track:             {row['track']}")
     print(f"  active_coords:     {row['active_coords']}")
+    print(f"  time_warp:         {row['time_warp']}")
+    if str(row["time_warp"]).lower() == "tanh":
+        print(f"  tanh_k:            {row['tanh_k']}")
+        print(f"  tanh_m:            {row['tanh_m']}")
     print(f"  F:                 {row['F']}")
     print(f"  D_rope:            {row['D_rope']}")
     print(f"  D_monster:         {row['D_monster']}")
@@ -299,9 +351,25 @@ def format_metric(x: object) -> str:
 
 
 def monster_overrides_from_args(args: argparse.Namespace) -> dict[str, object]:
+    n_t = float(args.n_t)
+    n_s = float(args.n_s)
+    if n_t == 0.0:
+        raise ValueError("n_t must be non-zero")
+    if n_s == 0.0:
+        raise ValueError("n_s must be non-zero")
+
+    t_unit = float(args.t_unit)
+    s_unit = float(args.s_unit)
+    if args.span_t is not None:
+        t_unit = float(args.span_t) / n_t
+    if args.span_s is not None:
+        s_unit = float(args.span_s) / n_s
+
     out: dict[str, object] = {
         "freq_scale": float(args.freq_scale),
         "freq_exponent": float(args.freq_exponent),
+        "t_unit": t_unit,
+        "s_unit": s_unit,
         "boost_scale": float(args.boost_scale),
         "rotation_scale": float(args.rotation_scale),
         "axis_blend": float(args.axis_blend),

@@ -95,7 +95,6 @@ class HyperGridConfig:
     key_t_value: float = 0.0
     query_t_values: tuple[float, ...] = (-8.0, -16.0, -24.0)
     tanh_k_values: tuple[float, ...] = (0.0001, 0.001, 0.01)
-    span: float = 1.0
     unit_scale: float = 1.0
     axis_mode: str = "xy_circle"
     freq_scale: float = 1.0
@@ -492,6 +491,8 @@ def _build_monster_config(
     theta_base: float,
     freq_scale: float,
     freq_exponent: float,
+    t_unit: float,
+    s_unit: float,
     boost_scale: float,
     rotation_scale: float,
     axis_mode: str | None,
@@ -502,6 +503,8 @@ def _build_monster_config(
     kwargs: dict[str, object] = {
         "freq_scale": float(freq_scale),
         "freq_exponent": float(freq_exponent),
+        "t_unit": float(t_unit),
+        "s_unit": float(s_unit),
         "boost_scale": float(boost_scale),
         "rotation_scale": float(rotation_scale),
         "axis_blend": float(axis_blend),
@@ -785,9 +788,8 @@ def run_monster_hyper_grid(
     query_index = cfg.query_y * cfg.image_size + cfg.query_x
 
     monster_cfg = f_monster.MonsterConfig(
-        span=cfg.span,
-        top_delta=cfg.top_delta,
-        unit=cfg.unit_scale / cfg.top_delta,
+        t_unit=cfg.unit_scale / cfg.top_delta,
+        s_unit=cfg.unit_scale / cfg.top_delta,
         theta_base=cfg.theta_base,
         freq_scale=cfg.freq_scale,
         freq_exponent=cfg.freq_exponent,
@@ -926,6 +928,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--theta-base", type=float, default=float(prepare.REFERENCE_THETA_BASE))
     parser.add_argument("--freq-scale", type=float, default=1.0)
     parser.add_argument("--freq-exponent", type=float, default=1.0)
+    parser.add_argument("--t-unit", type=float, default=1.0)
+    parser.add_argument("--s-unit", type=float, default=1.0)
     parser.add_argument("--boost-scale", type=float, default=1.0)
     parser.add_argument("--rotation-scale", type=float, default=1.0)
     parser.add_argument("--axis-mode", type=str, default=None)
@@ -941,7 +945,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--hyper-grid-dim", type=int, default=768)
     parser.add_argument("--hyper-grid-size", type=int, default=16)
     parser.add_argument("--hyper-grid-top-delta", type=float, default=16.0)
-    parser.add_argument("--hyper-grid-span", type=float, default=1.0)
 
     parser.add_argument("--skip-pair-charts", action="store_true")
     parser.add_argument("--skip-compare-charts", action="store_true")
@@ -959,6 +962,8 @@ def main() -> None:
         theta_base=float(args.theta_base),
         freq_scale=float(args.freq_scale),
         freq_exponent=float(args.freq_exponent),
+        t_unit=float(args.t_unit),
+        s_unit=float(args.s_unit),
         boost_scale=float(args.boost_scale),
         rotation_scale=float(args.rotation_scale),
         axis_mode=args.axis_mode,
@@ -998,7 +1003,6 @@ def main() -> None:
             embed_dim=int(args.hyper_grid_dim),
             theta_base=float(args.theta_base),
             top_delta=float(args.hyper_grid_top_delta),
-            span=float(args.hyper_grid_span),
             freq_scale=float(args.freq_scale),
             freq_exponent=float(args.freq_exponent),
             boost_scale=float(args.boost_scale),

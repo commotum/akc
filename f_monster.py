@@ -17,10 +17,9 @@ import prepare
 
 @dataclass(frozen=True)
 class MonsterConfig:
-    # Geometry / span
-    span: float = 2.0 * math.pi
-    top_delta: float = float(max(prepare.TARGET_WINDOWS))
-    unit: float | None = None
+    # Coordinate units
+    t_unit: float = 1.0
+    s_unit: float = 1.0
 
     # Frequency family
     theta_base: float = prepare.REFERENCE_THETA_BASE
@@ -47,12 +46,12 @@ def config_dict(config: MonsterConfig) -> dict[str, float | str | None]:
     return asdict(config)
 
 
-def resolved_unit(config: MonsterConfig) -> float:
-    if config.unit is not None:
-        return float(config.unit)
-    if config.top_delta == 0:
-        raise ValueError("top_delta must be non-zero when unit is not provided")
-    return float(config.span) / float(config.top_delta)
+def resolved_units(config: MonsterConfig) -> tuple[float, float]:
+    t_unit = float(config.t_unit)
+    s_unit = float(config.s_unit)
+    if (not np.isfinite(t_unit)) or (not np.isfinite(s_unit)):
+        raise ValueError("t_unit and s_unit must be finite")
+    return t_unit, s_unit
 
 
 def _normalize_rows(x: np.ndarray) -> np.ndarray:
@@ -147,7 +146,7 @@ def _build_lorentz_block_transforms(
 ) -> np.ndarray:
     length = bank.length
     num_freq = dim // 4
-    unit = resolved_unit(config)
+    t_unit, s_unit = resolved_units(config)
     inv_freq = prepare.warped_frequencies(
         num_freq,
         theta_base=float(config.theta_base),
@@ -160,8 +159,8 @@ def _build_lorentz_block_transforms(
     spatial = bank.monster_positions[:, 1:4]             # (L, 3)
     proj = spatial @ axes.T                              # (L, F)
 
-    phi = t * (unit * float(config.boost_scale)) * inv_freq[None, :]
-    theta = proj * (unit * float(config.rotation_scale)) * inv_freq[None, :]
+    phi = t * (t_unit * float(config.boost_scale)) * inv_freq[None, :]
+    theta = proj * (s_unit * float(config.rotation_scale)) * inv_freq[None, :]
 
     ch = np.cosh(phi)
     sh = np.sinh(phi)
@@ -205,7 +204,7 @@ def _build_dual_plane_block_transforms(
     """
     length = bank.length
     num_freq = dim // 4
-    unit = resolved_unit(config)
+    t_unit, s_unit = resolved_units(config)
     axes = build_axes(num_freq, config)
     u, v = tangent_frames(axes)
 
@@ -245,8 +244,8 @@ def _build_dual_plane_block_transforms(
     else:
         raise ValueError(f"unknown dual_freq_mode: {config.dual_freq_mode}")
 
-    phi = proj * (unit * float(config.boost_scale)) * inv_phi[None, :]
-    theta = proj * (unit * float(config.rotation_scale)) * inv_theta[None, :]
+    phi = proj * (t_unit * float(config.boost_scale)) * inv_phi[None, :]
+    theta = proj * (s_unit * float(config.rotation_scale)) * inv_theta[None, :]
 
     cp = np.cos(phi)
     sp = np.sin(phi)
