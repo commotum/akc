@@ -17,3 +17,4 @@ run_artifacts/*
 !run_artifacts/compare.ipynb
 !run_artifacts/monster_hyperparam_grid.py
 *.log
+.DS_Store
